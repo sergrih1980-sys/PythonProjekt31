@@ -1,0 +1,8 @@
+{% load cache %}
+{% cache 300 stats_block request.user.id %}
+  <div>
+    <p>Всего рассылок: {{ total_mailings }}</p>
+    <p>Активных рассылок: {{ active_mailings }}</p>
+    <p>Получателей: {{ total_recipients }}</p>
+  </div>
+{% endcache %}

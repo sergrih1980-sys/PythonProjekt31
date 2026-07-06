@@ -1,0 +1,14 @@
+!DOCTYPE html>
+<html>
+<head><title>Рассылки</title></head>
+<body>
+  <h1>Добро пожаловать в систему рассылок</h1>
+  {% if user.is_authenticated %}
+    <p>Вы уже вошли. <a href="{% url 'mailing-list' %}">Перейти к рассылкам</a>.</p>
+  {% else %}
+    <p>Пожалуйста, войдите или зарегистрируйтесь:</p>
+    <a href="{% url 'login' %}">Войти</a> |
+    <a href="{% url 'register' %}">Регистрация</a>
+  {% endif %}
+</body>
+</html>
